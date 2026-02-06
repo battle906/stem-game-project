@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bj565gbsxj7qr"]
+
+[ext_resource type="Script" uid="uid://epexyi0ewn74" path="res://main_menu.gd" id="1_7mewq"]
+[ext_resource type="FontFile" uid="uid://m1gd1kdxkho3" path="res://Jersey20-Regular.ttf" id="2_f0j1r"]
+[ext_resource type="Texture2D" uid="uid://bbjn243oyx6lf" path="res://icon.svg" id="3_f0j1r"]
+
+[node name="Main Menu" type="Node2D" unique_id=1024368054]
+script = ExtResource("1_7mewq")
+
+[node name="button manager" type="Control" parent="." unique_id=2028766452]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="start" type="Button" parent="button manager" unique_id=371266479]
+texture_filter = 1
+layout_mode = 0
+offset_left = 433.0
+offset_top = 282.0
+offset_right = 687.0
+offset_bottom = 360.0
+theme_override_colors/font_color = Color(0.4492646, 0.65606254, 0.74717706, 1)
+theme_override_colors/font_hover_color = Color(0, 0.4204015, 0.6687968, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_f0j1r")
+theme_override_font_sizes/font_size = 33
+text = "Start Game"
+flat = true
+
+[node name="options" type="Button" parent="button manager" unique_id=1562078744]
+physics_interpolation_mode = 0
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.025001
+anchor_top = 6.05
+anchor_right = 14.025001
+anchor_bottom = 6.05
+offset_left = -129.0
+offset_top = 124.0
+offset_right = 129.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(0.4509804, 0.654902, 0.7490196, 1)
+theme_override_colors/font_hover_color = Color(0, 0.41960785, 0.67058825, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_f0j1r")
+theme_override_font_sizes/font_size = 33
+text = "Options"
+flat = true
+
+[node name="quit" type="Button" parent="button manager" unique_id=967890566]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 439.0
+offset_right = 687.0
+offset_bottom = 495.0
+theme_override_colors/font_color = Color(0.4509804, 0.654902, 0.7490196, 1)
+theme_override_colors/font_hover_color = Color(0, 0.41960785, 0.67058825, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_f0j1r")
+theme_override_font_sizes/font_size = 33
+text = "Quit Game"
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1628290121]
+texture_filter = 1
+position = Vector2(207, 361)
+scale = Vector2(2.5117188, 2.3710938)
+texture = ExtResource("3_f0j1r")
+
+[connection signal="pressed" from="button manager/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="button manager/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="button manager/quit" to="." method="_on_quit_pressed"]

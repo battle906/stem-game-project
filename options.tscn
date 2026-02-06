@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cl5dhubitr52v"]
+
+[ext_resource type="Script" uid="uid://dq62yakq1ekh8" path="res://back.gd" id="1_5v8ap"]
+[ext_resource type="Texture2D" uid="uid://ba2ukxv7v0eq8" path="res://Buttons/not highlighted/arrow_back_33dp_73A7BF_FILL0_wght400_GRAD0_opsz40.png" id="1_ao2gm"]
+[ext_resource type="Texture2D" uid="uid://b3n1nvr36ltwm" path="res://Buttons/highlighted/arrow_back_33dp_006BAB_FILL0_wght400_GRAD0_opsz40.png" id="2_07a1d"]
+
+[node name="options" type="Node2D" unique_id=48451975]
+
+[node name="button manager" type="Control" parent="." unique_id=320522985]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="back" type="TextureButton" parent="button manager" unique_id=157187782]
+texture_filter = 1
+layout_mode = 0
+offset_right = 45.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_ao2gm")
+texture_hover = ExtResource("2_07a1d")
+script = ExtResource("1_5v8ap")
+
+[connection signal="pressed" from="button manager/back" to="button manager/back" method="_on_pressed"]
