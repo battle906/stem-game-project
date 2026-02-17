@@ -4,5 +4,3 @@
 position = Vector2(378, 278)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=228267955]
-
-[node name="test" type="Node2D" parent="." unique_id=1043847158]
