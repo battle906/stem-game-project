@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://cl5tj233fvjc"]
 
 [ext_resource type="Script" uid="uid://deigw7fwy1h17" path="res://movement.gd" id="1_1oj5k"]
-[ext_resource type="Texture2D" uid="uid://b3n1nvr36ltwm" path="res://Buttons/highlighted/arrow_back_33dp_006BAB_FILL0_wght400_GRAD0_opsz40.png" id="2_yx7mw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx7mw"]
-size = Vector2(164, 151)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1oj5k"]
+load_path = "res://.godot/imported/arrow_back_33dp_006BAB_FILL0_wght400_GRAD0_opsz40.png-7a271de32ccfdd3e14a2dce8e44ce9a9.ctex"
 
 [node name="main game" type="Node2D" unique_id=1207342263]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=402003601]
 visibility_layer = 2
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 1111.0
-offset_bottom = 634.0
+offset_left = 49.0
+offset_top = 32.0
+offset_right = 1164.0
+offset_bottom = 670.0
+rotation = -0.013953865
 color = Color(0.35686275, 1, 1, 1)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1189901887]
@@ -22,12 +22,8 @@ collision_layer = 2
 script = ExtResource("1_1oj5k")
 speed = 500
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=920868715]
-position = Vector2(638, 120.5)
-shape = SubResource("RectangleShape2D_yx7mw")
-debug_color = Color(0.4627451, 0.62352943, 0.14117648, 1)
-
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1963096991]
-position = Vector2(630, 123)
+texture_filter = 1
+position = Vector2(465, 340)
 scale = Vector2(7.712121, 7.439394)
-texture = ExtResource("2_yx7mw")
+texture = SubResource("CompressedTexture2D_1oj5k")
