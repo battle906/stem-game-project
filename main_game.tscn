@@ -1,29 +1,23 @@
 [gd_scene format=3 uid="uid://cl5tj233fvjc"]
 
-[ext_resource type="Script" uid="uid://deigw7fwy1h17" path="res://movement.gd" id="1_1oj5k"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1oj5k"]
-load_path = "res://.godot/imported/arrow_back_33dp_006BAB_FILL0_wght400_GRAD0_opsz40.png-7a271de32ccfdd3e14a2dce8e44ce9a9.ctex"
+[ext_resource type="PackedScene" uid="uid://bmxn2hfb6hd8j" path="res://player.tscn" id="1_1oj5k"]
 
 [node name="main game" type="Node2D" unique_id=1207342263]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=402003601]
 visibility_layer = 2
-offset_left = 49.0
-offset_top = 32.0
-offset_right = 1164.0
-offset_bottom = 670.0
-rotation = -0.013953865
+offset_left = -97.294235
+offset_top = -15.261808
+offset_right = 1187.8502
+offset_bottom = 726.594
+rotation = -0.01164696
+scale = Vector2(1.0220453, 0.97315454)
 color = Color(0.35686275, 1, 1, 1)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1189901887]
-disable_mode = 2
-collision_layer = 2
-script = ExtResource("1_1oj5k")
-speed = 500
+[node name="Node2D" type="Node2D" parent="." unique_id=1276520776]
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1963096991]
-texture_filter = 1
-position = Vector2(465, 340)
-scale = Vector2(7.712121, 7.439394)
-texture = SubResource("CompressedTexture2D_1oj5k")
+[node name="player" parent="." unique_id=2027188581 instance=ExtResource("1_1oj5k")]
+
+[node name="collisions" type="StaticBody2D" parent="." unique_id=1280324695]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collisions" unique_id=2048454318]

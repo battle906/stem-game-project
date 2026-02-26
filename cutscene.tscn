@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://nlwsehjnmchk"]
+
+[ext_resource type="Script" uid="uid://dlu4hojrn6gu6" path="res://cutscene.gd" id="1_ix241"]
+[ext_resource type="Texture2D" uid="uid://b3n1nvr36ltwm" path="res://Buttons/highlighted/arrow_back_33dp_006BAB_FILL0_wght400_GRAD0_opsz40.png" id="2_8vcau"]
+
+[node name="Node2D" type="Node2D" unique_id=887221702]
+script = ExtResource("1_ix241")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=285274975]
+position = Vector2(583, 328)
+scale = Vector2(13.5, 6.409091)
+texture = ExtResource("2_8vcau")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=670434321]
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1527713875]
