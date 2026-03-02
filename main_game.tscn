@@ -3,13 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://bmxn2hfb6hd8j" path="res://player.tscn" id="1_1oj5k"]
 
 [node name="main game" type="Node2D" unique_id=1207342263]
+metadata/_edit_horizontal_guides_ = [-1132.0]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=402003601]
 visibility_layer = 2
-offset_left = -97.294235
-offset_top = -15.261808
-offset_right = 1187.8502
-offset_bottom = 726.594
+offset_left = -91.99994
+offset_top = -23.99997
+offset_right = 1193.1445
+offset_bottom = 717.8557
 rotation = -0.01164696
 scale = Vector2(1.0220453, 0.97315454)
 color = Color(0.35686275, 1, 1, 1)
@@ -17,7 +18,10 @@ color = Color(0.35686275, 1, 1, 1)
 [node name="Node2D" type="Node2D" parent="." unique_id=1276520776]
 
 [node name="player" parent="." unique_id=2027188581 instance=ExtResource("1_1oj5k")]
+position = Vector2(295, 95)
 
 [node name="collisions" type="StaticBody2D" parent="." unique_id=1280324695]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="collisions" unique_id=2048454318]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions" unique_id=1956627145]
+build_mode = 1
+polygon = PackedVector2Array(-6, 642, 0, -2, 1151, -1, 1153, 648, 3, 648, -19, 799, -987, 580, -1118, -254, 253, -456, 2446, -158, 1528, 878, 312, 1045, 86, 784, -8, 692)

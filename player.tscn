@@ -5,6 +5,9 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_onrkg"]
 load_path = "res://.godot/imported/arrow_back_33dp_006BAB_FILL0_wght400_GRAD0_opsz40.png-7a271de32ccfdd3e14a2dce8e44ce9a9.ctex"
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4flbx"]
+radius = 61.073727
+
 [node name="player" type="CharacterBody2D" unique_id=2027188581]
 disable_mode = 2
 collision_layer = 2
@@ -16,3 +19,7 @@ texture_filter = 1
 position = Vector2(465, 340)
 scale = Vector2(7.712121, 7.439394)
 texture = SubResource("CompressedTexture2D_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1465221930]
+position = Vector2(469, 341)
+shape = SubResource("CircleShape2D_4flbx")
