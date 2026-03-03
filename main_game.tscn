@@ -15,8 +15,6 @@ rotation = -0.01164696
 scale = Vector2(1.0220453, 0.97315454)
 color = Color(0.35686275, 1, 1, 1)
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1276520776]
-
 [node name="player" parent="." unique_id=2027188581 instance=ExtResource("1_1oj5k")]
 position = Vector2(295, 95)
 
