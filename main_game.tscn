@@ -1,25 +1,41 @@
 [gd_scene format=3 uid="uid://cl5tj233fvjc"]
 
 [ext_resource type="PackedScene" uid="uid://bmxn2hfb6hd8j" path="res://player.tscn" id="1_1oj5k"]
+[ext_resource type="Texture2D" uid="uid://bfd816jd1mtuw" path="res://download.png" id="2_yx7mw"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yx7mw"]
+a = Vector2(1789.1343, 6.0000005)
+b = Vector2(1783.1035, 1261.9999)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ykeeq"]
+a = Vector2(4.7683716e-07, 1313.9999)
+b = Vector2(292.4933, -33850.996)
 
 [node name="main game" type="Node2D" unique_id=1207342263]
 metadata/_edit_horizontal_guides_ = [-1132.0]
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=402003601]
-visibility_layer = 2
-offset_left = -91.99994
-offset_top = -23.99997
-offset_right = 1193.1445
-offset_bottom = 717.8557
-rotation = -0.01164696
-scale = Vector2(1.0220453, 0.97315454)
-color = Color(0.35686275, 1, 1, 1)
 
 [node name="player" parent="." unique_id=2027188581 instance=ExtResource("1_1oj5k")]
 position = Vector2(295, 95)
 
 [node name="collisions" type="StaticBody2D" parent="." unique_id=1280324695]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions" unique_id=1956627145]
-build_mode = 1
-polygon = PackedVector2Array(-6, 642, 0, -2, 1151, -1, 1153, 648, 3, 648, -19, 799, -987, 580, -1118, -254, 253, -456, 2446, -158, 1528, 878, 312, 1045, 86, 784, -8, 692)
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="collisions" unique_id=817005164]
+position = Vector2(-1.0000005, -9.536743e-07)
+scale = Vector2(0.99489456, 1)
+shape = SubResource("SegmentShape2D_yx7mw")
+
+[node name="CollisionPolygon2D2" type="CollisionShape2D" parent="collisions" unique_id=149295706]
+position = Vector2(-1.0000005, -9.536743e-07)
+scale = Vector2(0.99489456, 1)
+shape = SubResource("SegmentShape2D_ykeeq")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=523031795]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1034949600]
+motion_mirroring = Vector2(0, 300)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=729883487]
+position = Vector2(782, 465.99997)
+scale = Vector2(6.7433333, 6.2878785)
+texture = ExtResource("2_yx7mw")
+offset = Vector2(0.115, 0)
