@@ -1,15 +1,7 @@
 [gd_scene format=3 uid="uid://cl5tj233fvjc"]
 
 [ext_resource type="PackedScene" uid="uid://bmxn2hfb6hd8j" path="res://player.tscn" id="1_1oj5k"]
-[ext_resource type="Texture2D" uid="uid://bfd816jd1mtuw" path="res://download.png" id="2_yx7mw"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_yx7mw"]
-a = Vector2(1789.1343, 6.0000005)
-b = Vector2(1783.1035, 1261.9999)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ykeeq"]
-a = Vector2(4.7683716e-07, 1313.9999)
-b = Vector2(292.4933, -33850.996)
+[ext_resource type="Texture2D" uid="uid://cr67pb66mmm7u" path="res://Buttons/not highlighted/download.png" id="2_yx7mw"]
 
 [node name="main game" type="Node2D" unique_id=1207342263]
 metadata/_edit_horizontal_guides_ = [-1132.0]
@@ -20,22 +12,23 @@ position = Vector2(295, 95)
 [node name="collisions" type="StaticBody2D" parent="." unique_id=1280324695]
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="collisions" unique_id=817005164]
-position = Vector2(-1.0000005, -9.536743e-07)
-scale = Vector2(0.99489456, 1)
-shape = SubResource("SegmentShape2D_yx7mw")
+rotation = 2.1621668
+scale = Vector2(0.948025, 1.01906)
+debug_color = Color(0.6509804, 1, 0, 0.99607843)
 
 [node name="CollisionPolygon2D2" type="CollisionShape2D" parent="collisions" unique_id=149295706]
-position = Vector2(-1.0000005, -9.536743e-07)
+position = Vector2(441, 69)
+rotation = -1.5898917
 scale = Vector2(0.99489456, 1)
-shape = SubResource("SegmentShape2D_ykeeq")
+debug_color = Color(0.6509804, 0.99607843, 0, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=523031795]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1034949600]
-motion_mirroring = Vector2(0, 300)
+motion_mirroring = Vector2(0, 1091.785)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=729883487]
-position = Vector2(782, 465.99997)
-scale = Vector2(6.7433333, 6.2878785)
+position = Vector2(795.00006, 346)
+scale = Vector2(3.8909574, 3.6416664)
 texture = ExtResource("2_yx7mw")
 offset = Vector2(0.115, 0)
