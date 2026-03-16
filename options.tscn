@@ -14,9 +14,9 @@ offset_bottom = 40.0
 
 [node name="back" type="TextureButton" parent="button manager" unique_id=157187782]
 texture_filter = 1
-layout_mode = 0
-offset_right = 45.0
-offset_bottom = 40.0
+layout_mode = 1
+offset_right = 33.0
+offset_bottom = 33.0
 texture_normal = ExtResource("1_ao2gm")
 texture_hover = ExtResource("2_07a1d")
 script = ExtResource("1_5v8ap")
