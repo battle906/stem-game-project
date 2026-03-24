@@ -3,24 +3,22 @@
 [ext_resource type="PackedScene" uid="uid://bmxn2hfb6hd8j" path="res://player.tscn" id="1_1oj5k"]
 [ext_resource type="Texture2D" uid="uid://cr67pb66mmm7u" path="res://Buttons/not highlighted/download.png" id="2_yx7mw"]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yx7mw"]
+a = Vector2(746, 58)
+b = Vector2(104, 58)
+
 [node name="main game" type="Node2D" unique_id=1207342263]
 metadata/_edit_horizontal_guides_ = [-1132.0]
 
 [node name="player" parent="." unique_id=2027188581 instance=ExtResource("1_1oj5k")]
-position = Vector2(295, 95)
+position = Vector2(337, 0)
 
 [node name="collisions" type="StaticBody2D" parent="." unique_id=1280324695]
+top_level = true
+position = Vector2(377, 224)
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="collisions" unique_id=817005164]
-rotation = 2.1621668
-scale = Vector2(0.948025, 1.01906)
-debug_color = Color(0.6509804, 1, 0, 0.99607843)
-
-[node name="CollisionPolygon2D2" type="CollisionShape2D" parent="collisions" unique_id=149295706]
-position = Vector2(441, 69)
-rotation = -1.5898917
-scale = Vector2(0.99489456, 1)
-debug_color = Color(0.6509804, 0.99607843, 0, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collisions" unique_id=620738140]
+shape = SubResource("SegmentShape2D_yx7mw")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=523031795]
 
@@ -28,6 +26,8 @@ debug_color = Color(0.6509804, 0.99607843, 0, 1)
 motion_mirroring = Vector2(0, 1091.785)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=729883487]
+light_mask = 4
+visibility_layer = 4
 position = Vector2(795.00006, 346)
 scale = Vector2(3.8909574, 3.6416664)
 texture = ExtResource("2_yx7mw")
