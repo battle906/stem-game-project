@@ -22,7 +22,6 @@ func _process(delta):
 disable_mode = 2
 collision_layer = 2
 script = ExtResource("1_4flbx")
-speed = 1000
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=685795190]
 modulate = Color(0.11372549, 1, 1, 1)
@@ -36,11 +35,6 @@ texture = SubResource("CompressedTexture2D_onrkg")
 position = Vector2(461, 343)
 shape = SubResource("CircleShape2D_4flbx")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1696930570]
-position = Vector2(461, 343)
-zoom = Vector2(1.815, 1.815)
-script = SubResource("GDScript_4flbx")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1266163684]
 
 [node name="HeightLabel" type="Label" parent="CanvasLayer" unique_id=2139675963]
@@ -49,12 +43,21 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -92.0
-offset_top = -23.0
+offset_left = -97.0
+offset_top = -41.0
+offset_right = -5.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
 theme_override_fonts/font = ExtResource("2_onrkg")
 theme_override_font_sizes/font_size = 40
 vertical_alignment = 1
+
+[node name="Node2D" type="Node2D" parent="." unique_id=147596560]
+
+[node name="Camera2D" type="Camera2D" parent="Node2D" unique_id=1696930570]
+position = Vector2(462, 344)
+zoom = Vector2(1.815, 1.815)
+script = SubResource("GDScript_4flbx")

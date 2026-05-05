@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dmlkst6cl5ieg"]
+
+[sub_resource type="Environment" id="Environment_te0mf"]
+background_mode = 3
+glow_levels/1 = 20.0
+glow_intensity = 8.0
+glow_strength = 2.0
+fog_mode = 1
+fog_density = 1.0
+volumetric_fog_density = 0.0
+volumetric_fog_albedo = Color(0.00011382803, 0.00011382803, 0.00011382803, 1)
+adjustment_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" unique_id=1112991378]
+environment = SubResource("Environment_te0mf")
