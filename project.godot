@@ -14,6 +14,10 @@ config/name="stem game project"
 run/main_scene="uid://bj565gbsxj7qr"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+GlobalWorldEnvironment="*uid://dmlkst6cl5ieg"
+
 [input]
 
 up={

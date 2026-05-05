@@ -25,3 +25,4 @@ func _process(delta):
 	var final_color := mid_blend.lerp(deep_color, t)
 	height_label.modulate = final_color
 	
+	

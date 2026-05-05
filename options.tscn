@@ -1,13 +1,35 @@
 [gd_scene format=3 uid="uid://cl5dhubitr52v"]
 
-[ext_resource type="Script" uid="uid://dq62yakq1ekh8" path="res://back.gd" id="1_5v8ap"]
-[ext_resource type="Texture2D" uid="uid://ndq1i2n8rjid" path="res://IMG_4761.png" id="1_ao2gm"]
-[ext_resource type="Texture2D" uid="uid://dm6oxynsaf7pp" path="res://IMG_4760.png" id="2_07a1d"]
+[ext_resource type="Texture2D" uid="uid://dpod320xrk2ev" path="res://IMG_4761.jpg" id="1_ao2gm"]
+[ext_resource type="Texture2D" uid="uid://62i4q6b13yk7" path="res://IMG_4760.jpg" id="2_07a1d"]
 
-[node name="options" type="Node2D" unique_id=48451975]
+[sub_resource type="GDScript" id="GDScript_se8ut"]
+resource_name = "options_buttons"
+script/source = "extends Control
+@onready var exit_button = $\"button manager/back\" as Button
+@onready var main_menu = preload(\"res://main menu.tscn\") as PackedScene
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	handle_connections_signals()
+
+func on_exit_pressed() -> void:
+	get_tree().change_scene_to_packed(main_menu)
+
+func handle_connections_signals() -> void:
+	exit_button.button_down.connect(on_exit_pressed)
+"
+
+[node name="options" type="Control" unique_id=888174216]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_se8ut")
 
 [node name="button manager" type="Control" parent="." unique_id=320522985]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -15,17 +37,10 @@ offset_bottom = 40.0
 [node name="back" type="TextureButton" parent="button manager" unique_id=157187782]
 texture_filter = 1
 layout_mode = 1
-offset_left = -844.0
-offset_top = -422.0
-offset_right = -588.0
-offset_bottom = -166.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 106.0
+offset_bottom = 66.0
 texture_normal = ExtResource("1_ao2gm")
 texture_hover = ExtResource("2_07a1d")
-stretch_mode = 0
-script = ExtResource("1_5v8ap")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1182915877]
-position = Vector2(573, 369)
-zoom = Vector2(0.4, 0.4)
-
-[connection signal="pressed" from="button manager/back" to="button manager/back" method="_on_pressed"]
+stretch_mode = 4
