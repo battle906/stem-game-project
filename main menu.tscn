@@ -1,64 +1,131 @@
 [gd_scene format=3 uid="uid://bj565gbsxj7qr"]
 
-[ext_resource type="Script" uid="uid://epexyi0ewn74" path="res://main_menu.gd" id="1_7mewq"]
 [ext_resource type="FontFile" uid="uid://m1gd1kdxkho3" path="res://Jersey20-Regular.ttf" id="2_f0j1r"]
 
-[node name="Main Menu" type="Control" unique_id=1298839348]
+[sub_resource type="GDScript" id="GDScript_7mewq"]
+resource_name = "main_menu"
+script/source = "class_name MainMenu
+extends Control
+
+@onready var start = $MarginContainer/HBoxContainer/VBoxContainer/start as Button
+@onready var options = $MarginContainer/HBoxContainer/VBoxContainer/options as Button
+@onready var exit = $MarginContainer/HBoxContainer/VBoxContainer/quit as Button 
+
+@onready var main_game = preload(\"res://main_game.tscn\") as PackedScene
+@onready var options_menu = preload(\"res://options.tscn\") as PackedScene
+
+func _ready() -> void:
+	handle_connecting_signals()
+
+func on_start_pressed():
+	get_tree().change_scene_to_packed(main_game)
+
+
+func on_options_pressed():
+	get_tree().change_scene_to_file(\"res://options.tscn\")
+
+
+func on_quit_pressed():
+	get_tree().quit()
+
+
+func handle_connecting_signals() -> void:
+	start.button_down.connect(on_start_pressed)
+	options.button_down.connect(on_options_pressed)
+	exit.button_down.connect(on_quit_pressed)
+"
+
+[node name="Main_Menu" type="Control" unique_id=1298839348]
 layout_mode = 3
-anchors_preset = 0
-script = ExtResource("1_7mewq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_7mewq")
 
-[node name="button manager" type="Control" parent="." unique_id=2028766452]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=774361762]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
-[node name="start" type="Button" parent="button manager" unique_id=371266479]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1835567060]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="sperator" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1844177332]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=14466931]
+texture_filter = 3
+texture_repeat = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4509804, 0.654902, 0.7490196, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_f0j1r")
+theme_override_font_sizes/font_size = 64
+text = "Trench Explorers"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=697912966]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=2024526363]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="sperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=326939024]
+layout_mode = 2
+
+[node name="start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=371266479]
 texture_filter = 1
-layout_mode = 0
-offset_left = 399.0
-offset_top = 180.0
-offset_right = 653.0
-offset_bottom = 258.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.4492646, 0.65606254, 0.74717706, 1)
 theme_override_colors/font_hover_color = Color(0, 0.4204015, 0.6687968, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("2_f0j1r")
 theme_override_font_sizes/font_size = 33
 text = "Start Game"
-flat = true
 
-[node name="options" type="Button" parent="button manager" unique_id=1562078744]
+[node name="sperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=990491540]
+layout_mode = 2
+
+[node name="options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1562078744]
 physics_interpolation_mode = 0
 texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 14.025001
-anchor_top = 6.05
-anchor_right = 14.025001
-anchor_bottom = 6.05
-offset_left = -163.0
-offset_top = 22.0
-offset_right = 95.0
-offset_bottom = 74.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.4509804, 0.654902, 0.7490196, 1)
 theme_override_colors/font_hover_color = Color(0, 0.41960785, 0.67058825, 1)
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("2_f0j1r")
 theme_override_font_sizes/font_size = 33
 text = "Options"
-flat = true
 
-[node name="quit" type="Button" parent="button manager" unique_id=967890566]
-layout_mode = 0
-offset_left = 409.0
-offset_top = 337.0
-offset_right = 653.0
-offset_bottom = 393.0
+[node name="sperator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=543127887]
+layout_mode = 2
+
+[node name="quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=967890566]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.4509804, 0.654902, 0.7490196, 1)
 theme_override_colors/font_hover_color = Color(0, 0.41960785, 0.67058825, 1)
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("2_f0j1r")
 theme_override_font_sizes/font_size = 33
 text = "Quit Game"
-flat = true

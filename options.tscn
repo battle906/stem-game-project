@@ -20,23 +20,11 @@ func handle_connections_signals() -> void:
 	exit_button.button_down.connect(on_exit_pressed)
 "
 
-[node name="options" type="Control" unique_id=888174216]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="options" type="Node2D" unique_id=604021746]
 script = SubResource("GDScript_se8ut")
 
-[node name="button manager" type="Control" parent="." unique_id=320522985]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="back" type="TextureButton" parent="button manager" unique_id=157187782]
+[node name="back" type="TextureButton" parent="." unique_id=157187782]
 texture_filter = 1
-layout_mode = 1
 offset_left = 1.0
 offset_top = -1.0
 offset_right = 106.0

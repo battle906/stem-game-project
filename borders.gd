@@ -6,6 +6,7 @@ func _process(delta):
 	var rect = cam.get_visible_rect()
 
 
+
 	if cam:
 	
 		

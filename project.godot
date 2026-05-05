@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 
 GlobalWorldEnvironment="*uid://dmlkst6cl5ieg"
 
+[gui]
+
+theme/custom_font="uid://m1gd1kdxkho3"
+
 [input]
 
 up={
