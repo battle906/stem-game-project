@@ -1,34 +1,57 @@
 [gd_scene format=3 uid="uid://cl5dhubitr52v"]
 
-[ext_resource type="Texture2D" uid="uid://dpod320xrk2ev" path="res://IMG_4761.jpg" id="1_ao2gm"]
-[ext_resource type="Texture2D" uid="uid://62i4q6b13yk7" path="res://IMG_4760.jpg" id="2_07a1d"]
+[ext_resource type="Script" uid="uid://cbmmmf1bnxdka" path="res://options_menu.gd" id="1_5v8ap"]
+[ext_resource type="PackedScene" uid="uid://i376sum8m15h" path="res://seting_tab_container.tscn" id="2_se8ut"]
 
-[sub_resource type="GDScript" id="GDScript_se8ut"]
-resource_name = "options_buttons"
-script/source = "extends Control
-@onready var exit_button = $\"button manager/back\" as Button
-@onready var main_menu = preload(\"res://main menu.tscn\") as PackedScene
+[node name="Options_Menu" type="Control" unique_id=2124934271]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5v8ap")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	handle_connections_signals()
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=158120082]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
-func on_exit_pressed() -> void:
-	get_tree().change_scene_to_packed(main_menu)
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1434751688]
+layout_mode = 2
+theme_override_constants/separation = -48
 
-func handle_connections_signals() -> void:
-	exit_button.button_down.connect(on_exit_pressed)
-"
-
-[node name="options" type="Node2D" unique_id=604021746]
-script = SubResource("GDScript_se8ut")
-
-[node name="back" type="TextureButton" parent="." unique_id=157187782]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=316677408]
 texture_filter = 1
-offset_left = 1.0
-offset_top = -1.0
-offset_right = 106.0
-offset_bottom = 66.0
-texture_normal = ExtResource("1_ao2gm")
-texture_hover = ExtResource("2_07a1d")
-stretch_mode = 4
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4492646, 0.65606254, 0.74717706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 40
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seting_Tab_Container" parent="MarginContainer/VBoxContainer" unique_id=222961669 instance=ExtResource("2_se8ut")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1528863200]
+texture_filter = 1
+custom_minimum_size = Vector2(120, 30.535)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.4492646, 0.65606254, 0.74717706, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.4204015, 0.6687968, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+text = "Exit"

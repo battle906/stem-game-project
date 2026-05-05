@@ -16,8 +16,6 @@ var fixed_x = 795.0
 
 func _process(delta):
 	global_position.x = fixed_x
-
-func _get_visible_rect()
 "
 
 [node name="player" type="CharacterBody2D" unique_id=2027188581]
