@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cl5dhubitr52v"]
 
-[ext_resource type="Script" uid="uid://cbmmmf1bnxdka" path="res://options_menu.gd" id="1_5v8ap"]
-[ext_resource type="PackedScene" uid="uid://i376sum8m15h" path="res://seting_tab_container.tscn" id="2_se8ut"]
+[ext_resource type="Script" uid="uid://cbmmmf1bnxdka" path="res://Menus/Menu Scripts/options_menu.gd" id="1_5v8ap"]
+[ext_resource type="PackedScene" uid="uid://i376sum8m15h" path="res://Menus/seting_tab_container.tscn" id="2_se8ut"]
 
 [node name="Options_Menu" type="Control" unique_id=2124934271]
 layout_mode = 3
@@ -45,7 +45,7 @@ size_flags_vertical = 3
 
 [node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1528863200]
 texture_filter = 1
-custom_minimum_size = Vector2(120, 30.535)
+custom_minimum_size = Vector2(149, 31.765)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0

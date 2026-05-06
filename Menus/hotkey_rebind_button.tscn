@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c8fe4ewa0okfp"]
 
-[ext_resource type="Script" uid="uid://b4u1202wh3wm1" path="res://hotkey_rebind_button.gd" id="1_bxw1p"]
+[ext_resource type="Script" uid="uid://b4u1202wh3wm1" path="res://Menus/Menu Scripts/hotkey_rebind_button.gd" id="1_bxw1p"]
 
-[node name="Hotkey_Rebind_Button" type="Control" unique_id=3580363]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rx5lk"]
+
+[node name="Hotkey_Rebind_Button" type="Control" unique_id=3580363 groups=["hotkey_button"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,7 +12,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bxw1p")
-action_name = null
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1451973659]
 layout_mode = 1
@@ -26,6 +27,9 @@ alignment = 1
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=1505475903]
 custom_minimum_size = Vector2(400, 30)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.4492646, 0.65606254, 0.74717706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 32
 text = "action"
 vertical_alignment = 1
@@ -34,10 +38,16 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 200
+theme_override_styles/separator = SubResource("StyleBoxEmpty_rx5lk")
 
 [node name="Button" type="Button" parent="HBoxContainer" unique_id=2055360222]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.4492646, 0.65606254, 0.74717706, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.4204015, 0.6687968, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
 toggle_mode = true
 text = "action key"
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://i376sum8m15h"]
 
-[ext_resource type="PackedScene" uid="uid://c8fe4ewa0okfp" path="res://hotkey_rebind_button.tscn" id="1_5gma4"]
+[ext_resource type="PackedScene" uid="uid://c8fe4ewa0okfp" path="res://Menus/hotkey_rebind_button.tscn" id="1_5gma4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lgpj6"]
 
@@ -20,11 +20,16 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 100.0
-offset_top = 100.0
+offset_top = 70.0
 offset_right = -100.0
-offset_bottom = -50.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_selected_color = Color(0, 0.4204015, 0.6687968, 1)
+theme_override_colors/font_hovered_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_unselected_color = Color(0.4492646, 0.65606254, 0.74717706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 tab_alignment = 1
 current_tab = 2
 
@@ -105,7 +110,6 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_lgpj6")
 
 [node name="Hotkey_Rebind_Button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=3580363 instance=ExtResource("1_5gma4")]
 layout_mode = 2
-action_name = null
 
 [node name="Hotkey_Rebind_Button2" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=123631223 instance=ExtResource("1_5gma4")]
 layout_mode = 2

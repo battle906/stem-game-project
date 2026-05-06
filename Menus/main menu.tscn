@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bj565gbsxj7qr"]
 
-[ext_resource type="PackedScene" uid="uid://cl5dhubitr52v" path="res://options.tscn" id="2_bajiw"]
+[ext_resource type="PackedScene" uid="uid://cl5dhubitr52v" path="res://Menus/options.tscn" id="2_bajiw"]
 [ext_resource type="FontFile" uid="uid://m1gd1kdxkho3" path="res://Jersey20-Regular.ttf" id="2_f0j1r"]
 
 [sub_resource type="GDScript" id="GDScript_7mewq"]
@@ -14,7 +14,7 @@ extends Control
 @onready var options_menu: OptionsMenu = $Options_Menu
 @onready var margin_container: MarginContainer = $MarginContainer
 
-@onready var main_game = preload(\"res://main_game.tscn\") as PackedScene
+@onready var main_game = preload(\"res://Main Game/main_game.tscn\") as PackedScene
 
 func _ready() -> void:
 	handle_connecting_signals()
